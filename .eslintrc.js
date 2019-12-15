@@ -5,7 +5,6 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'react-app',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
@@ -26,12 +25,22 @@ module.exports = {
     'react/jsx-filename-extension': [
       'error',
       {
-        extensions: ['.tsx'],
+        extensions: ['.ts','.tsx'],
       },
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off'
+    '@typescript-eslint/explicit-member-accessibility': 'off',
   },
   settings: {
     'import/parsers': {
